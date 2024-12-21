@@ -3,8 +3,11 @@ import Posts from "./views/Posts.js";
 import PostView from "./views/PostView.js";
 import Settings from "./views/Settings.js";
 
+
+// defines a function named pathToRegex that converts a path string into a regular expression. This regular expression can then be used to match URLs against the defined routes in your application
 const pathToRegex = path => new RegExp("^" + path.replace(/\//g, "\\/").replace(/:\w+/g, "(.+)") + "$");
 
+// parse the client-side URL
 const getParams = match => {
     const values = match.result.slice(1);
     const keys = Array.from(match.route.path.matchAll(/:(\w+)/g)).map(result => result[1]);
@@ -20,6 +23,7 @@ const navigateTo = url => {
 };
 
 const router = async () => {
+    console.log(pathToRegex("/posts/:id"));
     const routes = [
         { path: "/", view: Dashboard },
         { path: "/posts", view: Posts },
