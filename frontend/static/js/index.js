@@ -53,8 +53,13 @@ const router = async () => {
     document.querySelector("#app").innerHTML = await view.getHtml();
 };
 
+//  The popstate event is triggered when the active history entry changes, such as when the user navigates back or forward in the browser history. 
+// When this event occurs, the router function is called to handle the routing logic.
 window.addEventListener("popstate", router);
 
+// listens for the DOMContentLoaded event. 
+// This event is fired when the initial HTML document has been completely loaded and parsed, without waiting for stylesheets, images, and subframes to finish loading. 
+// The provided callback function is executed once the DOM is fully loaded.
 document.addEventListener("DOMContentLoaded", () => {
     document.body.addEventListener("click", e => {
         if (e.target.matches("[data-link]")) {
