@@ -1,6 +1,6 @@
 body {
-    --nav-width: 200px;
-    margin: 0 0 0 var(--nav-width);
+    --nav-width: 60px;
+    margin: var(--nav-height) 0 0 0;
     font-family: 'Quicksand', sans-serif;
     font-size: 18px;
 }
@@ -9,9 +9,13 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: var(--nav-width);
-    height: 100vh;
+    width: 100%;
+    height: var(--nav-height);
     background: #222222;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 .nav__link {
@@ -20,6 +24,7 @@ body {
     text-decoration: none;
     color: #eeeeee;
     font-weight: 500;
+    margin-right: 20px; /* Add some space between the nav links */
 }
 
 .nav__link:hover {
@@ -28,6 +33,7 @@ body {
 
 #app {
     margin: 2em;
+    padding-top: 20px; /* Add padding to the top to create space below the nav bar */
     line-height: 1.5;
     font-weight: 500;
 }
